@@ -243,18 +243,36 @@ Follow these steps to run the demo:
 
 A CloudBees Feature Management provider demo.
 
+Follow these steps to setup the application within CloudBees
+
+1. Within the CloudBees webUI, add a new application called `OpenFeature playground`. You can keep the default environment of `Production`
+1. In `App Settings` add a new custom STRING property called `email` as shown below. This is used in the `fib-algo` configuration to control the flag value via the email of the user logging into the playground application.
+
+    <img src="readme-images/cb-email.png" width="50%">
+1. Create a new boolean flag called `new-welcome-message`.
+1. Create a new flag called `fib-algo` with the values: `recursive`, `memo`, `loop`, `binet`, and `default`.
+1. For the `fib-algo` flag, add a configuration.  This can be a combination of the `email` regEx of `.*faas.com$` and a split as shown below
+
+    <img src="readme-images/cb-fib-algo.png" width="50%">
+1. Create a new flag called `hex-color` with the values: `CC0000`,`00CC00`, `0000CC`, `chartreuse`.
+1. For the `hex-color` flag, add a configuration.  This can be any of the defined values as the one shown below
+
+    <img src="readme-images/cb-hex-color.png" width="50%">
+1. Ensure for each flag, the configuration switch is set to ON as shown below
+
+    <img src="readme-images/cb-config-on.png" width="20%">
+1. Ensure the completed list of flags look as follows
+
+    <img src="readme-images/cb-flag-list.png" width="50%">
+
 Follow these steps to run the demo:
 
 1. Copy `.env.example` to `.env`
-2. Add a CloudBees app key to the `.env` file.
-3. Create a new boolean flag called `new-welcome-message`.
-4. Create a new flag called `fib-algo` with the values: `recursive`,
-   `memo`, `loop`, `binet`, and `default`.
-5. Create a new flag called `hex-color` with the values: `CC0000`,
-   `00CC00`, `0000CC`, `chartreuse`.
-6. Run `npm run cloudbees-demo`
-7. Open http://localhost:3000/message, http://localhost:3000/hex-color/markup, or http://localhost:3000/calculate?num=40 in your browser
-8. Optionally, run the UI as described in the [introductory demo](#introductory-demo)
+1. Run `npm run cloudbees-demo`
+1. Add a CloudBees app key to the `.env` file.  This values is the auto-generated value for the application environment.  For example, the key is `722b98c058ebe73042d3e22d` as taken from this example URL on the environment overview page `https://app.rollout.io/app/631b98c058aba64042d3e77a/environment/722b98c058ebe73042d3e22d/flags`
+1. Open http://localhost:3000/message, http://localhost:3000/hex-color/markup, or http://localhost:3000/calculate?num=40 in your browser
+1. Optionally, run the UI as described in the [introductory demo](#introductory-demo)
+
 
 #### LaunchDarkly Provider Demo
 
