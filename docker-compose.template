@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  demo:
+    image: ghcr.io/open-feature/open-feature-demo:latest
+    ports:
+      - "30000:30000"
+    command:
+      - cloudbees
+    environment:
+      CLOUDBEES_APP_KEY: DELETE ME OR CHANGE ME
+      FLAGSMITH_ENV_ID: DELETE ME OR CHANGE ME
+      FLAGSMITH_ENV_KEY: DELETE ME OR CHANGE ME
+      LD_KEY: DELETE ME OR CHANGE ME
+      SPLIT_KEY: DELETE ME OR CHANGE ME
